@@ -1,6 +1,9 @@
 package entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Customer {
@@ -9,13 +12,13 @@ public class Customer {
     private Long id;
     private String name;
     private String surname;
-    private Integer zipCode;
+    private String zipCode;
     private String email;
 
     public Customer() {
     }
 
-    public Customer(Long id, String name, String surname, Integer zipCode, String email) {
+    public Customer(Long id, String name, String surname, String zipCode, String email) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -35,7 +38,7 @@ public class Customer {
         return surname;
     }
 
-    public Integer getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
@@ -51,7 +54,7 @@ public class Customer {
         this.surname = surname;
     }
 
-    public void setZipCode(Integer zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

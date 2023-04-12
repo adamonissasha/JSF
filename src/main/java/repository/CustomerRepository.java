@@ -1,4 +1,4 @@
-package service;
+package repository;
 
 import entity.Customer;
 import jakarta.ejb.Singleton;
@@ -6,7 +6,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Singleton
@@ -44,7 +43,7 @@ public class CustomerRepository {
         em.getTransaction().commit();
     }
 
-    public void addCustomer(String name, String surname, String email, int zipcode) {
+    public void addCustomer(String name, String surname, String email, String zipcode) {
         EntityManager em = entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
         em.persist(new Customer(null, name, surname, zipcode, email));
